@@ -1,0 +1,206 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: sans-serif;
+  background: #ddd;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  gap: 20px;
+}
+.card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.left {
+  flex: 2;
+}
+.right {
+  flex: 1;
+}
+.input-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+}
+button.add {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-top: 1px solid #eee;
+}
+.item-name {
+  flex: 1;
+}
+.item-name.strike {
+  text-decoration: line-through;
+}
+.count-controls {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 20px;
+  text-align: center;
+  line-height: 32px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.minus {
+  background: #dc3545;
+  color: white;
+}
+.plus {
+  background: #28a745;
+  color: white;
+}
+.minus.disabled {
+  background: #f8d7da;
+  cursor: not-allowed;
+}
+.action-btn {
+  padding: 5px 15px;
+  background: #eee;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  margin-left: 10px;
+}
+.delete {
+  background: #dc3545;
+  color: white;
+  border: none;
+}
+.section-title {
+  font-weight: bold;
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+.tag {
+  display: inline-block;
+  background: #eee;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin: 5px 5px 0 0;
+  font-size: 14px;
+  position: relative;
+}
+.tag .count {
+  background: orange;
+  color: white;
+  border-radius: 10px;
+  padding: 2px 8px;
+  margin-left: 5px;
+  font-size: 12px;
+}
+.strike{
+  text-decoration: line-through;
+}
+
+/* ------------------------- BADGE ------------------------- */
+.badge {
+  position: fixed;
+  left: 20px;
+  bottom: 0;
+  background-color: #a52dbd; /* темно фіолетовий */
+  color: white;
+  padding: 10px 20px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.4s ease, background-color 0.4s ease;
+  z-index: 1000;
+}
+
+.badge .author {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.badge:hover {
+  transform: translateY(-30px);
+  background-color: #606cd0; 
+}
+
+.badge:hover .author {
+  max-height: 100px;
+  opacity: 1;
+}
+
+
+@media print {
+  .badge {
+    background-color: white !important;
+    color: black;
+    border: 2px solid #4B0082;
+  }
+  .badge .label::before {
+    content: "Kostenko Nikita";
+  }
+  .badge .label {
+    color: #4B0082;
+  }
+  .badge .author {
+    display: none;
+  }
+}
+@media (max-width: 650px) {
+  body {
+    flex-direction: column;
+  }
+}
+
+
+button[data-tooltip], span[data-tooltip] {
+  position: relative;
+}
+
+button[data-tooltip]::after,
+span[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: -35px;
+  left: 50%;
+  transform: translateX(-50%) scale(0.8);
+  background-color: #6a0dad;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  font-size: 12px;
+  z-index: 999;
+}
+
+button[data-tooltip]:hover::after,
+span[data-tooltip]:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}
