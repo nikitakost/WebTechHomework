@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Кошик покупок</title>
+  <link rel="stylesheet" href="ShoppingCart.css">
+</head>
+
+<body> 
+  <div class="card left">
+    <div class="input-row">
+      <input type="text" placeholder="Назва товару" />
+      <button class="add" data-tooltip="Додати товар">Додати</button>
+    </div>
+
+    <div class="item">
+      <div class="item-name">Помідори</div>
+      <div class="count-controls">
+        <span class="circle minus" data-tooltip="Зменшити кількість">−</span>
+        <span class="circle">2</span>
+        <span class="circle plus" data-tooltip="Збільшити кількість">+</span>
+        <button class="action-btn" data-tooltip="Позначити як куплене">Куплено</button>
+        <button class="circle delete" data-tooltip="Видалити товар">✖</button>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="item-name">Печиво</div>
+      <div class="count-controls">
+        <span class="circle minus" data-tooltip="Зменшити кількість">−</span>
+        <span class="circle">2</span>
+        <span class="circle plus" data-tooltip="Збільшити кількість">+</span>
+        <button class="action-btn" data-tooltip="Куплені товари">Куплено</button>
+        <button class="circle delete" data-tooltip="Видалити товар">✖</button>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="item-name">Сир</div>
+      <div class="count-controls">
+        <span class="circle minus" data-tooltip="Зменшити кількість">−</span>
+        <span class="circle">1</span>
+        <span class="circle plus" data-tooltip="Збільшити кількість">+</span>
+        <button class="action-btn" data-tooltip="Куплені товари">Куплено</button>
+        <button class="circle delete" data-tooltip="Видалити товар">✖</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="card right">
+    <div class="section-title">Залишилося</div>
+    <div class="tag">Печиво <span class="count">2</span></div>
+    <div class="tag">Сир <span class="count">1</span></div>
+
+    <div class="section-title">Куплено</div>
+    <div class="tag"><span class="strike">Помідори</span> <span class="count">2</span></div>
+  </div>
+
+ <div class="badge" id="badge">
+    <div class="label">BuyList</div>
+    <div class="author">created by: Kostenko Nikita</div>
+ </div>
+
+ <script src="ShoppingCart.js"></script>
+ 
+</body>
+</html>
