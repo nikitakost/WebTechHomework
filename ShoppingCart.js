@@ -143,6 +143,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  
   function createItem(name) {
     const itemDiv = document.createElement('div');
     itemDiv.classList.add('item');
