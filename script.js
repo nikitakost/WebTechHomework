@@ -14,7 +14,6 @@ function savePolls() {
 function open(elem) { elem.style.display = 'flex'; }
 function close(elem) { elem.style.display = 'none'; }
 
-
 function renderPolls() {
   const search = document.getElementById('search').value.toLowerCase();
   const categoryFilter = document.getElementById('category').value;
